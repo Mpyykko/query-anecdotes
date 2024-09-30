@@ -1,16 +1,20 @@
+import { useNotification } from '../NotificationContext'
+
 const Notification = () => {
+  const { state } = useNotification()
   const style = {
     border: 'solid',
     padding: 10,
     borderWidth: 1,
-    marginBottom: 5
+    marginBottom: 5,
+    backgroundColor: 'lightyellow',
+    textAlign: 'center',
+    display: state.visible ? 'block' : 'none',
   }
-  
-  if (true) return null
 
   return (
     <div style={style}>
-      
+      {state.message}
     </div>
   )
 }
